@@ -1,0 +1,47 @@
+{
+  "parts": {
+    "4471-000": {
+      "rev": "B",
+      "eco": "ECO-2321",
+      "released": "2026-06-22",
+      "title": "ASSY, DRIVE MODULE"
+    },
+    "4471-020": {
+      "rev": "D",
+      "eco": "ECO-2291",
+      "released": "2026-03-14",
+      "title": "BRACKET, MOUNTING",
+      "history": [
+        {
+          "rev": "C",
+          "eco": "ECO-2174",
+          "released": "2025-08-22"
+        }
+      ]
+    },
+    "4471-021": {
+      "rev": "A",
+      "eco": "ECO-2190",
+      "released": "2025-09-02",
+      "title": "BRACKET, MATING"
+    },
+    "4471-105": {
+      "rev": "B",
+      "eco": "ECO-2304",
+      "released": "2026-05-06",
+      "title": "SHAFT, PINION"
+    },
+    "4471-108": {
+      "rev": "A",
+      "eco": "ECO-2110",
+      "released": "2025-05-14",
+      "title": "BUSHING, FLANGED"
+    },
+    "4471-210": {
+      "rev": "A",
+      "eco": "ECO-2310",
+      "released": "2026-06-12",
+      "title": "BRACKET, SENSOR"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "default",
+  "description": "Built-in title block vocabulary and required fields. Copy this file to <customer-slug>.json and edit to match a customer's template; a job whose customer name matches the slug uses it automatically.",
+  "required_fields": ["part_no", "rev", "title", "material", "finish", "drawn", "checked", "approved", "sheet"],
+  "field_severity": {"part_no": "high", "rev": "high", "title": "medium", "material": "high", "finish": "medium", "drawn": "low", "checked": "low", "approved": "medium", "sheet": "low"},
+  "extra_labels": {},
+  "extra_attrib_tags": {},
+  "notes": "extra_labels / extra_attrib_tags map a field name to additional label texts or block attribute tags, e.g. {\"part_no\": [\"DRAWING NUMBER\", \"DOC NO\"]}."
+}

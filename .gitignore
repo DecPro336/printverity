@@ -1,0 +1,16 @@
+*.pt
+!data/models/layout.pt
+*.pyc
+.env
+.pytest_cache/
+.run/
+.venv/
+__pycache__/
+data/audit.jsonl
+data/index/
+data/jobs/
+data/models/layout_dataset/
+data/models/runs/
+data/out/*
+!data/out/.gitkeep
+frontend/node_modules/

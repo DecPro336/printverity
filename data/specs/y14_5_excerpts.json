@@ -1,0 +1,14 @@
+{
+  "excerpts": [
+    {"id": "y145-1", "standard": "ASME Y14.5-2018", "clause": "5.1 (dimensioning fundamentals)", "text": "Each dimension shall have a tolerance. Dimensions shall not be duplicated or the same information given in two different ways; double dimensioning can lead to conflicting requirements after a change."},
+    {"id": "y145-2", "standard": "ASME Y14.5-2018", "clause": "7.2 (datum references)", "text": "A feature control frame that references a datum requires a corresponding datum feature symbol on the drawing. A referenced datum that is not defined makes the tolerance unverifiable."},
+    {"id": "y145-3", "standard": "ASME Y14.5-2018", "clause": "5.11 (reference dimensions)", "text": "Reference dimensions are enclosed in parentheses and are not toleranced; they are for information only and are not used for inspection."},
+    {"id": "y145-4", "standard": "ASME Y14.5-2018", "clause": "7.16 (position tolerance)", "text": "A position tolerance controls the location of a feature of size relative to datums. The tolerance zone is a cylinder when the diameter symbol precedes the tolerance value. MMC allows a bonus tolerance as the feature departs from maximum material condition."},
+    {"id": "y145-5", "standard": "ASME Y14.5-2018", "clause": "9.4 (runout)", "text": "Circular and total runout are referenced to a datum axis, typically established by two datum features (A-B) or a single cylindrical datum feature."},
+    {"id": "y145-6", "standard": "ASME Y14.5-2018", "clause": "5.7 (chain dimensioning)", "text": "Chain dimensioning accumulates tolerance. The overall dimension of a chained set should be shown as reference or basic, or one link left undimensioned, to avoid over-constraint."},
+    {"id": "y145-7", "standard": "ASME Y14.5-2018", "clause": "4.2 (units)", "text": "The drawing shall state the linear units used. Where both SI and U.S. customary values appear, the primary units are stated and the alternate units are shown in brackets."},
+    {"id": "y145-8", "standard": "ASME Y14.100", "clause": "title block", "text": "The title block identifies the drawing number, revision, title, material, finish, approvals and sheet count. Approval fields are complete before release."},
+    {"id": "thread-1", "standard": "ASME B1.13M / B1.1", "clause": "tap drill", "text": "For metric threads the tap drill diameter is approximately the major diameter minus the pitch (M6x1.0 tap drill 5.0). A hole at or above the major diameter cannot be tapped; it is a clearance hole."},
+    {"id": "y14-34", "standard": "ASME Y14.34", "clause": "parts lists", "text": "Every item on a parts list is identified on the drawing with a find number balloon, and every balloon corresponds to a parts list entry. Quantities on the parts list agree with the assembly."}
+  ]
+}

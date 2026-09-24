@@ -1,0 +1,12 @@
+{
+  "botName": "PrintVerityAsk",
+  "description": "Shop-floor channel: ask the drawing package. Fulfillment Lambda: app.integrations.lex.fulfillment_handler",
+  "locale": "en_US",
+  "intents": [
+    {"name": "AskDrawing", "sampleUtterances": ["what is the {question}", "{question}", "ask about {question}", "on job {job} {question}"],
+     "slots": [{"name": "job", "type": "AMAZON.AlphaNumeric", "elicitationPrompt": "Which job number?"}, {"name": "question", "type": "AMAZON.FreeFormInput", "elicitationPrompt": "What do you want to know about the drawing package?"}],
+     "fulfillment": {"lambda": true}},
+    {"name": "FallbackIntent", "parentIntentSignature": "AMAZON.FallbackIntent"}
+  ],
+  "sessionAttributes": {"job": "current job id, set by the channel integration"}
+}

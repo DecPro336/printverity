@@ -1,0 +1,36 @@
+# Local full stack: app + Celery worker + PostgreSQL/pgvector + Redis.   docker compose -f infra/docker-compose.yml up --build
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment: { POSTGRES_USER: printverity, POSTGRES_PASSWORD: printverity, POSTGRES_DB: printverity }
+    volumes: [ "pgdata:/var/lib/postgresql/data" ]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U printverity"], interval: 5s, retries: 10 }
+  redis:
+    image: redis:7-alpine
+    healthcheck: { test: ["CMD", "redis-cli", "ping"], interval: 5s, retries: 10 }
+  app:
+    build: { context: .., dockerfile: Dockerfile }
+    environment:
+      DATABASE_URL: postgresql://printverity:printverity@db:5432/printverity
+      REDIS_URL: redis://redis:6379/0
+      PV_CELERY: "on"
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      VOYAGE_API_KEY: ${VOYAGE_API_KEY:-}
+      PV_S3_BUCKET: ${PV_S3_BUCKET:-}
+      EPICOR_BASE_URL: ${EPICOR_BASE_URL:-}
+      EPICOR_API_KEY: ${EPICOR_API_KEY:-}
+      ASSEMBLYAI_API_KEY: ${ASSEMBLYAI_API_KEY:-}
+    ports: [ "8710:8710" ]
+    volumes: [ "pvdata:/srv/printverity/data" ]
+    depends_on: { db: { condition: service_healthy }, redis: { condition: service_healthy } }
+  worker:
+    build: { context: .., dockerfile: Dockerfile }
+    command: ["celery", "-A", "app.tasks.celery_app", "worker", "-l", "info", "--concurrency=2"]
+    environment:
+      DATABASE_URL: postgresql://printverity:printverity@db:5432/printverity
+      REDIS_URL: redis://redis:6379/0
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      VOYAGE_API_KEY: ${VOYAGE_API_KEY:-}
+    volumes: [ "pvdata:/srv/printverity/data" ]
+    depends_on: { db: { condition: service_healthy }, redis: { condition: service_healthy } }
+volumes: { pgdata: {}, pvdata: {} }

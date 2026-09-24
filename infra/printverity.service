@@ -1,0 +1,16 @@
+[Unit]
+Description=PrintVerity drawing review agent (API + front end + Celery worker)
+After=network-online.target redis-server.service postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=desktop
+WorkingDirectory=/home/desktop/Documents/New Folder/printverity
+ExecStart=/bin/bash run.sh 8710
+ExecStopPost=/bin/bash run.sh stop 8710
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

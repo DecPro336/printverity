@@ -1,0 +1,21 @@
+{
+  "specs": [
+    {"ref": "QS-114", "title": "Customer supplier quality spec: anodize and chem film requirements", "revisions": ["A", "B", "C", "D"], "current": "D", "superseded": {"B": "2025-11-03", "C": "2026-02-10"}, "on_file": true},
+    {"ref": "QS-201", "title": "Customer supplier quality spec: first article and PPAP submission", "revisions": ["A", "B"], "current": "B", "superseded": {"A": "2024-06-01"}, "on_file": true},
+    {"ref": "DS-07", "title": "Client drawing standard: notes, chamfers and default tolerances", "revisions": ["3"], "current": "3", "superseded": {}, "on_file": true},
+    {"ref": "ASME Y14.5", "title": "Dimensioning and Tolerancing", "revisions": ["2009", "2018"], "current": "2018", "superseded": {"2009": "2019-01-01"}, "on_file": true},
+    {"ref": "ASME B46.1", "title": "Surface Texture", "revisions": ["2019"], "current": "2019", "superseded": {}, "on_file": true},
+    {"ref": "AMS 2759", "title": "Heat Treatment of Steel Parts, General Requirements", "revisions": ["F", "G"], "current": "G", "superseded": {"F": "2023-04-01"}, "on_file": true},
+    {"ref": "AMS 2471", "title": "Anodic Treatment of Aluminum Alloys, Sulfuric Acid Process, Undyed", "revisions": ["K"], "current": "K", "superseded": {}, "on_file": true},
+    {"ref": "MIL-DTL-13924", "title": "Coating, Oxide, Black, for Ferrous Metals", "revisions": ["D"], "current": "D", "superseded": {}, "on_file": true},
+    {"ref": "MIL-DTL-5541", "title": "Chemical Conversion Coatings on Aluminum", "revisions": ["F"], "current": "F", "superseded": {}, "on_file": true},
+    {"ref": "ASTM A105", "title": "Carbon Steel Forgings for Piping Applications", "revisions": ["23"], "current": "23", "superseded": {}, "on_file": true},
+    {"ref": "ASTM B209", "title": "Aluminum and Aluminum-Alloy Sheet and Plate", "revisions": ["14", "24"], "current": "24", "superseded": {"14": "2024-05-01"}, "on_file": true},
+    {"ref": "NAS1149", "title": "Washer, Flat", "revisions": ["-"], "current": "-", "superseded": {}, "on_file": true},
+    {"ref": "ISO 2768", "title": "General tolerances", "revisions": ["1989"], "current": "1989", "superseded": {}, "on_file": true}
+  ],
+  "customer_rules": [
+    {"id": "CR-01", "text": "Keyway callouts require a fit class (N9 or JS9) per supplier manual section 4.3.", "pattern": "KEYWAY", "requires": "fit_class"},
+    {"id": "CR-02", "text": "Chamfer notes must state size and angle explicitly (1.0 x 45), not a C-code, per DS-07.", "pattern": "CHAMFER", "forbid": "\\bC\\d\\b"}
+  ]
+}
